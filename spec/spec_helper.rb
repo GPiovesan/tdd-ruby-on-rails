@@ -17,6 +17,12 @@ require_relative '../helpers/helper'
 
 RSpec.configure do |config|
 
+  # Falhas agregadas - Exibe todos os erros (expect) durante a execução de um teste ao invés de parar os testes
+  # Utilizando globalmente
+  config.define_derived_metadata do |meta|
+    meta[:aggregate_failures] = true
+  end
+
   config.before(:suite) do
     puts ">>>>>>>>>>>>>>>> ANTES DE TODA suíte de testes >>>>>>>>>>>>>>>>"
   end
