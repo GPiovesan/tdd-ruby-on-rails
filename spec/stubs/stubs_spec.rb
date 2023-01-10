@@ -35,7 +35,7 @@ describe 'Stub' do
         other_student = Student.new
 
         allow_any_instance_of(Student).to receive(:bar).and_return(true)
-
+a
         expect(student.bar).to be_truthy
         expect(other_student.bar).to be_truthy
     end
