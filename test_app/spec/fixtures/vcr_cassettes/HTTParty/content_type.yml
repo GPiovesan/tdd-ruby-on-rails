@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://jsonplaceholder.typicode.com/posts/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Jan 2023 04:14:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '995'
+      X-Ratelimit-Reset:
+      - '1667224332'
+      Vary:
+      - Origin, Accept-Encoding
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Cache-Control:
+      - max-age=43200
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"116-jnDuMpjju89+9j7e0BqkdFsVRjs"
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - REVALIDATED
+      Server-Timing:
+      - cf-q-config;dur=6.0000002122251e-06
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=b4C7reH0OV%2Fzb6how1OUXkm%2F48nCfBCO0LAbTJzywGKoo3RKimVB%2BbpMdC4rM42PUDp6%2FZ4PAhmVaA6ljCODuwVHlun52W%2B%2FmH6gCcXScL%2BHYQtril39U5M02Jj0umt%2BkTObhkkI3UUYkTpmKRnZi7%2FGpW6zjoqsbVwJ"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 788b4ee07e1f51e0-GRU
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "userId": 1,
+          "id": 2,
+          "title": "qui est esse",
+          "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+        }
+  recorded_at: Fri, 13 Jan 2023 04:14:59 GMT
+recorded_with: VCR 6.1.0
