@@ -3,12 +3,14 @@ FactoryBot.define do
 
         transient do
             upcased false
+            qtt_orders 3
         end
 
         name { Faker::Name.name } 
-        #email { Faker::Internet.email }
+        address { Faker::Address.street_address }
         
-        sequence(:email) { |n| "meu_email-#{n}@email.com" }
+        #email { Faker::Internet.email }
+        sequence(:email) { |n| "meu_email-#{n}@email.com" } # Trabalhando com sequences
 
         trait :male do
             gender 'M'
@@ -28,7 +30,14 @@ FactoryBot.define do
             days_to_pay 15
         end
 
-        factory :customer_male, traits: [:male]
+        trait :with_orders do
+            after(:create) do |customer, evaluator|
+                create_list(:order, evaluator.qtt_orders, customer: customer)
+            end
+        end
+
+        factory :customer_with_orders, traits: [:with_orders]
+        factory :customer_male, traits: [:male, :default]
         factory :customer_female, traits: [:female]
         factory :customer_vip, traits: [:vip]
         factory :customer_default, traits: [:default]
@@ -37,10 +46,6 @@ FactoryBot.define do
         factory :customer_male_default, traits: [:male, :default]
         factory :customer_female_default, traits: [:male, :default]
         
-        
-        
-                
-
         after(:create) do |customer, evaluator|
             customer.name.upcase! if evaluator.upcased # Coloca o nome em upcase caso o parametro transient seja alterado
         end
